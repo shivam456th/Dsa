@@ -5,23 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array Traversing</title>
     <script>
-        let data = [9, 45, 2 , 8, 45, 23, 7, 78, 0, 11, 41, 77];
-        let newEL= 70;
-        let position = 2;
-        console.warn(data)
-        for(let i=data.length-1; i>=0; i--){
-            // console.warn(data[i])
-            if (i>=position) {
-                data[i+1]=data[i];
-                if (i==position) {
-                    data[i]=newEL;
-                }
+        function insertEl() {
+            let data = [9, 45, 2, 8, 45, 23, 7, 78, 0, 11, 41, 77];
+
+            // Get position and newEL values from inputs
+            let position = parseInt(document.getElementById('position').value, 10);
+            let newEL = parseInt(document.getElementById('newEL').value, 10);
+
+            if (isNaN(position) || position < 0 || position > data.length) {
+                alert("Please enter a valid position between 0 and " + data.length);
+                return;
             }
+            if (isNaN(newEL)) {
+                alert("Please enter a valid new element to insert");
+                return;
+            }
+
+            // Print original data
+            console.warn("Original array:", data);
+
+            // Move elements to the right to make space for newEL
+            for (let i = data.length; i > position; i--) {
+                data[i] = data[i - 1];
+            }
+            // Insert the new element
+            data[position] = newEL;
+
+            // Print new array
+            console.warn("After insertion:", data);
+            alert("Inserted " + newEL + " at position " + position + ". Check console for result.");
         }
-        console.warn(data)
     </script>
 </head>
 <body>
-    
+    <input type="text" id="position" placeholder="enter position">
+    <input type="text" id="newEL" placeholder="enter element">
+    <button onclick="insertEl()">Insert</button>
 </body>
 </html>
