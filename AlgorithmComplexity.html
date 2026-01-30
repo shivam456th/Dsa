@@ -3,41 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlgorithmComplexity</title>
+    <title>Algorithm Complexity - Big O</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f6f8;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: #fff;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .note {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e8f0fe;
+            border-left: 5px solid #1a73e8;
+        }
+    </style>
 </head>
+
 <body>
+
+    <h1>Algorithm Complexity (Big O Notation)</h1>
+
     <p>
-        <b>Big O notation</b> is used to classify algorithms according to how their running time or space requirements grow as the input size grows.
+        <b>Big O notation</b> ka use hum yeh batane ke liye karte hain ki 
+        koi algorithm input size badhne par kitna slow ya fast hota hai.
+        Yeh mainly <b>Time Complexity</b> aur <b>Space Complexity</b> ko measure karta hai.
     </p>
-    <table border="1" cellpadding="5" cellspacing="0">
+
+    <table>
         <thead>
             <tr>
-                <th>Complexity</th>
+                <th>Time Complexity</th>
+                <th>Name</th>
                 <th>Example</th>
+                <th>Performance</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>O(1)</td>
+                <td>Constant Time</td>
                 <td>Accessing array element by index</td>
+                <td>🚀 Very Fast</td>
             </tr>
             <tr>
                 <td>O(log n)</td>
-                <td>Binary search</td>
+                <td>Logarithmic Time</td>
+                <td>Binary Search</td>
+                <td>⚡ Fast</td>
             </tr>
             <tr>
                 <td>O(n)</td>
-                <td>Linear search</td>
+                <td>Linear Time</td>
+                <td>Linear Search</td>
+                <td>🙂 Average</td>
             </tr>
             <tr>
                 <td>O(n log n)</td>
-                <td>Merge sort</td>
+                <td>Linearithmic Time</td>
+                <td>Merge Sort, Quick Sort</td>
+                <td>👍 Efficient</td>
             </tr>
             <tr>
                 <td>O(n<sup>2</sup>)</td>
-                <td>Bubble sort</td>
+                <td>Quadratic Time</td>
+                <td>Bubble Sort, Selection Sort</td>
+                <td>🐢 Slow</td>
             </tr>
         </tbody>
     </table>
+
+    <div class="note">
+        <b>Important Notes:</b>
+        <ul>
+            <li>Big O worst-case scenario ko represent karta hai</li>
+            <li>Loops aksar <b>O(n)</b> banate hain</li>
+            <li>Nested loops usually <b>O(n²)</b> hote hain</li>
+            <li>Efficient algorithms large data ke liye zaroori hote hain</li>
+        </ul>
+    </div>
+
 </body>
 </html>
